@@ -1,6 +1,6 @@
 # amazon-clone
 
-+ requirements
+### requirements
     - home page
     - Signup Page
     - Login Page

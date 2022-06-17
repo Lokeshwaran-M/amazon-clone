@@ -1,54 +1,60 @@
-
-
-/* chat application 
-
-      elements
- 1 User login
- 2 chat room
- 3 group chat - invite link with admin access and friends in group identification
- 4 sharing medias - sharing pic and video call 
- 5 finding Location (exception)
-*/
+/**
+ * ### requirements
+    - home page
+    - Signup Page
+    - Login Page
+    - Cart
+    - Product Page
+    - Order History
+ */
 
 // initial login
-function login() {
-    /**
-     * asign a user ID
-     */
-    console.log("login")
+/**
+ * user data structure
+ *     +user
+ *       +name
+ *          -password
+ *
+ */
+var USER = {
+    userList:[],
+    productCart : []
+};
+function login(user, pwd) {
+
+  USER.userList.push({
+    name : user,
+    pwd : pwd
+  })
+  USER.currentUser = user
 }
 
-
-
-
-
-
-
-
+var PRODUCTS = ["pen", "box", "car"];
 function productsDisplay() {
-    /**
-     * display all products and detials
-     * also able to select the item and order it
-     * can add it to cart
-    */
-
-
+  for (var i = 0; i < PRODUCTS.length; i++) {
+    console.log(PRODUCTS[i]);
+  }
 }
-function productCart() {
-    /**
-     * add new items to cart 
-     * delete item
-     * view the item detials on click
-     */
-    
+
+function productCart(product) {
+  for (var i = 0; i < PRODUCTS.length; i++) {
+    if ((product === PRODUCTS[i])) {
+      USER.productCart.push(product)
+    }
+  }
 }
 
 function orderHistory() {
-    /**
-     * keep track of all orders
-     * chart history
-     * delivery status
-     * 
-     */
 
+    console.log(USER.productCart);
 }
+
+//   main function
+
+function main() {
+  login("lok", "123");
+  productsDisplay();
+  productCart("car");
+  orderHistory();
+}
+main();
