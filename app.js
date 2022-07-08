@@ -124,6 +124,7 @@ function orderHistory() {
 //   main function
 
 function main() {
+  // const name = document.getElementById('name');
   signin("lok", "123");
   productsDisplay();
   productCart("car");
